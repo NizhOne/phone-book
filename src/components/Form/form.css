@@ -1,0 +1,9 @@
+.label-input, .label-input input {
+    width: 100%;
+}
+.add-contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 20px;
+}

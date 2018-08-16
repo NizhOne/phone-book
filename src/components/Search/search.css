@@ -1,0 +1,30 @@
+.search {
+    width: 220px;
+    height: 28px;
+    position: relative;
+    margin: 20px;
+}
+.search__input {
+    width: 170px;
+    height: 100%;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    padding-left: 20px;
+    padding-right: 30px;
+    background-color: #ffffff;
+    background-image: url('../../assets/icons/search.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+.search input::placeholder {
+    font-size: 12px;
+}
+.clickable {
+    height: 28px;
+    width: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
