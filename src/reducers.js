@@ -6,8 +6,7 @@ const initialState = null;
 function contacts(state = initialState ? initialState : [], action) {
     switch (action.type) {
         case REQUEST_CONTACTS:
-            console.log(action.contacts);
-            return action.contacts;
+            return action.contacts ? action.contacts : [];
         case ADD_CONTACT:
             let add_contact = [
                 ...state,

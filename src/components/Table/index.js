@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TableComponent from './Table';
-import {deleteContact,  fetchContacts, setId} from '../../actions';
+import {deleteContact, fetchContacts, setId} from '../../actions';
 
 const getVisibleContacts = (contacts,  searchString) => {
     return searchString.length > 0 ?
