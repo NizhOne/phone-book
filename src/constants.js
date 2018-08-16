@@ -1,17 +1,17 @@
 export const basicForm = [
     {
         placeholder: 'Name',
-        inputType: 'text',
+        type: 'text',
         name: 'name'
     },
     {
         placeholder: 'Phone number',
-        inputType: 'tel',
+        type: 'tel',
         name: 'phoneNumber'
     },
     {
         placeholder: 'Email',
-        inputType: 'email',
+        type: 'email',
         name: 'email'
     }
 ];

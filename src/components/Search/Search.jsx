@@ -1,32 +1,21 @@
 import React from 'react';
-import './search.css';
 import PropTypes from 'prop-types';
 
-class SearchComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: props.searchString
-        }
-    }
-    handleChange = (e) => {
-        this.setState({
-            value: e.target.value
-        }, () => this.props.onSearchChange(this.state.value));
-    };
+import './search.css';
 
-    render() {
-        return (
-            <div className={`search`}>
-                <input className={`search__input`} placeholder={'Search'} onChange={this.handleChange} value={this.state.value} type={`search`}/>
-                <div className={`clickable`}/>
-            </div>
-        );
-    }
-}
+const SearchComponent = ({ searchString, onSearchChange }) =>
+    <div className={`search`}>
+        <input
+            className={`search__input`}
+            placeholder={'Search'}
+            onChange={({ target: { value } }) => onSearchChange(value)}
+            value={searchString} type={`search`} />
+        <div className={`clickable`} />
+    </div>
 
 SearchComponent.propTypes = {
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    searchString: PropTypes.string
 };
 
 export default SearchComponent;
