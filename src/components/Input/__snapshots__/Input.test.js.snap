@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test 1`] = `
+<label
+  className="label-input"
+>
+  <input
+    name={undefined}
+    onChange={[Function]}
+    placeholder={undefined}
+    type={undefined}
+    value="hello"
+  />
+</label>
+`;

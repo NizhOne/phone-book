@@ -8,7 +8,7 @@ import './table.css';
 
 const TableComponent = ({tableData, deleteItem, editItem}) =>
     <div className={`table-wrapper`}>
-        <Search/>
+        <Search />
         <TableRow isHeader={ true } rowData={{name: 'Name', phoneNumber: 'Phone number', email: 'Email'}}/>
         {
             tableData.map((item) => {

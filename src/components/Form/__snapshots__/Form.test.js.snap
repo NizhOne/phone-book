@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test 1`] = `
+<form
+  className="add-contact-form"
+>
+  <label
+    className="label-input"
+  >
+    <input
+      name="name"
+      onChange={[Function]}
+      placeholder="Name"
+      type={undefined}
+      value="123"
+    />
+  </label>
+  <label
+    className="label-input"
+  >
+    <input
+      name="phoneNumber"
+      onChange={[Function]}
+      placeholder="Phone number"
+      type={undefined}
+      value="123"
+    />
+  </label>
+  <label
+    className="label-input"
+  >
+    <input
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      type={undefined}
+      value="123"
+    />
+  </label>
+  <button
+    onClick={[Function]}
+  >
+    Save
+  </button>
+</form>
+`;

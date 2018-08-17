@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test 1`] = `
+<div
+  className="table-wrapper"
+>
+  <div
+    className="table-row"
+  >
+    <div
+      className="table-row__determining"
+    >
+      <span
+        className="table-row__determining_main"
+      >
+        Name
+      </span>
+       
+    </div>
+    <div
+      className="table-row__values"
+    >
+      <div
+        className="table-row__values_value"
+      >
+        Phone number
+      </div>
+      <div
+        className="table-row__values_value"
+      >
+        Email
+      </div>
+    </div>
+  </div>
+</div>
+`;

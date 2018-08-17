@@ -51,8 +51,10 @@ class FormComponent extends React.Component {
 };
 
 FormComponent.propTypes = {
+    isEdit: PropTypes.bool,
     formData: PropTypes.object,
     onButtonClick: PropTypes.func,
+    onSaveButtonClick: PropTypes.func
 };
 
 export default FormComponent

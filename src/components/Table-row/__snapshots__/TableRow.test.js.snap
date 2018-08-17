@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test 1`] = `
+<div
+  className="table-row"
+>
+  <div
+    className="table-row__determining"
+  >
+    <div>
+      <button
+        className="table-row__button"
+        onClick={[Function]}
+      >
+        delete
+      </button>
+      <button
+        className="table-row__button"
+        onClick={[Function]}
+      >
+        edit
+      </button>
+    </div>
+    <span
+      className="table-row__determining_main"
+    />
+     
+  </div>
+  <div
+    className="table-row__values"
+  >
+    <div
+      className="table-row__values_value"
+    />
+    <div
+      className="table-row__values_value"
+    />
+  </div>
+</div>
+`;
