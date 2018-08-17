@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './input.css';
+
 const Input = ({type, name, onChange, placeholder, value}) =>
     <label className={`label-input`}>
         <input type={type}
