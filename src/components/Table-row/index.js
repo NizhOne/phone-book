@@ -1,2 +1,1 @@
-import TableRow from './Table-row';
-export default TableRow;
+export {default} from './TableRow'

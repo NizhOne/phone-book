@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
+
 import FormComponent from './Form';
 import {addContact, resetId, saveContact} from '../../actions';
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onButtonClick: (contactData) => {
-            dispatch(addContact({id: Date.now(), ...contactData}))
+            dispatch(addContact({id: Date.now(), ...contactData}));
         },
         onSaveButtonClick: (id, contactData) => {
             dispatch(saveContact({id,  ...contactData}));
-            dispatch(resetId())
+            dispatch(resetId());
         }
     }
 };

@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
+
 import TableComponent from './Table';
-import {deleteContact, fetchContacts, setId} from '../../actions';
+import {deleteContact, fetchContacts, search, setId} from '../../actions';
+import wrappedTable from '../../hoc/wrappedTable';
 
 const getVisibleContacts = (contacts,  searchString) => {
     return searchString.length > 0 ?
@@ -24,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(deleteContact(id))
         },
         editItem: (id) => {
+            dispatch(search(''));
             dispatch(setId(id));
         },
         fetchContacts: (url) => {
@@ -32,9 +35,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
+const WrappedTable = wrappedTable(TableComponent);
 const Table = connect(
     mapStateToProps,
     mapDispatchToProps
-)(TableComponent);
+)(WrappedTable);
 
 export default Table;

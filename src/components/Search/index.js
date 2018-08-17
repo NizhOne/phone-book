@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import SearchComponent from './Search';
 import { search } from '../../actions';
 

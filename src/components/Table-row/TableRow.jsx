@@ -1,6 +1,7 @@
 import React from 'react';
-import './table-row.css';
 import PropTypes from 'prop-types';
+
+import './table-row.css';
 
 const TableRow = ({rowData, isHeader, deleteItem, editItem}) => {
     const buttons = isHeader ?

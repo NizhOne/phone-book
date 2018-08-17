@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 let App = ({isEdit}) => {
     return (
         isEdit ?
-            <Form/>:
+            <Form />:
             <div>
-                <Table/>
-                <Form/>
+                <Table />
+                <Form />
             </div>
     )
 };

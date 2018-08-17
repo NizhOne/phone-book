@@ -1,39 +1,30 @@
 import React from 'react';
-import './table.css';
-import TableRow from '../Table-row';
-import Search from '../Search'
 import PropTypes from 'prop-types';
 
-class TableComponent extends React.Component{
-    componentDidMount() {
-        this.props.fetchContacts('tableData')
-    }
+import TableRow from '../Table-row';
+import Search from '../Search'
 
-    render() {
-        const Table = (
-            this.props.tableData.map((item) => {
+import './table.css';
+
+const TableComponent = ({tableData, deleteItem, editItem}) =>
+    <div className={`table-wrapper`}>
+        <Search/>
+        <TableRow isHeader={ true } rowData={{name: 'Name', phoneNumber: 'Phone number', email: 'Email'}}/>
+        {
+            tableData.map((item) => {
                 return <TableRow key={item.id}
                                  rowData={ item }
-                                 editItem={ () => this.props.editItem(item.id) }
-                                 deleteItem={ () => this.props.deleteItem(item.id) }
+                                 editItem={ () => editItem(item.id) }
+                                 deleteItem={ () => deleteItem(item.id) }
                 />
             })
-        );
-        return (
-            <div className={`table-wrapper`}>
-                <Search/>
-                <TableRow isHeader={ true } rowData={{name: 'Name', phoneNumber: 'Phone number', email: 'Email'}}/>
-                { Table }
-            </div>
-        );
-    }
-}
+        }
+    </div>;
 
 TableComponent.propTypes = {
     tableData: PropTypes.array.isRequired,
     deleteItem: PropTypes.func.isRequired,
     editItem: PropTypes.func.isRequired,
-    fetchContacts: PropTypes.func
 };
 
 export default TableComponent
