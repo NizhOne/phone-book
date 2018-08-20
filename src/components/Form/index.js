@@ -32,9 +32,4 @@ const getDeletingIndexById = (id, array) => {
     });
 };
 
-const Form = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(FormComponent);
-
-export default Form;
+export default connect(mapStateToProps, mapDispatchToProps)(FormComponent);

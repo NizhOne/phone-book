@@ -1,24 +1,16 @@
 import React from 'react';
 import Table from './components/Table';
 import Form from './components/Form';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
-let App = ({isEdit}) => {
-    return (
-        isEdit ?
-            <Form />:
-            <div>
-                <Table />
-                <Form />
-            </div>
-    )
-};
+const App = ({isEdit}) =>
+    isEdit ?
+        <Form/> :
+        <div>
+            <Table/>
+            <Form/>
+        </div>;
 
-const mapStateToProps = (state) => {
-   return {
-       isEdit : state.editData
-   }
-};
+const mapStateToProps = state => ({isEdit: state.editData});
 
-App = connect(mapStateToProps)(App);
-export default App;
+export default connect(mapStateToProps)(App);

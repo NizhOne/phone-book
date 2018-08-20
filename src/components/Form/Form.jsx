@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { basicForm } from '../../constants';
+import {basicForm} from '../../constants';
 import Input from '../Input';
 
 import './form.css';
@@ -11,13 +11,14 @@ class FormComponent extends React.Component {
         super(props);
         this.state = {
             formData: props.formData,
-        }
+        };
     }
+
     handleInputChange = ({target: {name, value}}) => {
         this.setState({
-            formData : {
+            formData: {
                 ...this.state.formData,
-                [name] : value
+                [name]: value
             }
         });
     };
@@ -25,24 +26,31 @@ class FormComponent extends React.Component {
     clearInput = () => {
         this.setState({
             formData: this.props.formData
-        })
+        });
     };
 
     render() {
+        const {isEdit, onSaveButtonClick, onButtonClick} = this.props;
+
         return (
             <form className={`add-contact-form`}>
-                { basicForm.map(({ type, name, placeholder }) => {
+                {basicForm.map(({type, name, placeholder}) => {
                     return <Input
                         onChange={this.handleInputChange}
                         value={this.state.formData[name]}
                         placeholder={placeholder}
-                        name={name} type={type}
-                        key={name}/>
-                }) }
+                        name={name}
+                        type={type}
+                        key={name}/>;
+                })}
                 <button
-                    onClick={ (e) => { e.preventDefault(); this.props.isEdit ?
-                        this.props.onSaveButtonClick(this.props.isEdit, this.state.formData) :
-                        this.props.onButtonClick(this.state.formData); this.clearInput() }}>
+                    onClick={(e) => {
+                        e.preventDefault();
+                        isEdit ?
+                            onSaveButtonClick(isEdit, this.state.formData) :
+                            onButtonClick(this.state.formData);
+                        this.clearInput();
+                    }}>
                     Save
                 </button>
             </form>
@@ -51,10 +59,10 @@ class FormComponent extends React.Component {
 };
 
 FormComponent.propTypes = {
-    isEdit: PropTypes.bool,
+    isEdit: PropTypes.string,
     formData: PropTypes.object,
     onButtonClick: PropTypes.func,
     onSaveButtonClick: PropTypes.func
 };
 
-export default FormComponent
+export default FormComponent;

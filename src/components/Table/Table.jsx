@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import TableRow from '../Table-row';
+import TableRow from '../TableRow';
 import Search from '../Search'
 
 import './table.css';

@@ -5,7 +5,13 @@ import './search.css';
 
 const SearchComponent = ({onSearchChange, value}) => (
     <div className={`search`}>
-        <input className={`search__input`} placeholder={'Search'} onChange={({target: {value}}) => onSearchChange(value)} value={value} type={`search`}/>
+        <input
+            className={`search__input`}
+            placeholder={'Search'}
+            onChange={({target: {value}}) => onSearchChange(value)}
+            value={value}
+            type={`search`}
+        />
         <div className={`clickable`}/>
     </div>
 );

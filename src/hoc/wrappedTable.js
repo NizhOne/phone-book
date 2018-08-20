@@ -1,15 +1,13 @@
 import React from 'react';
 
-const wrappedTable = (BaseComponent) => {
-    class HOC extends React.Component {
-        componentDidMount() {
-            this.props.fetchContacts('tableData');
-        }
-        render() {
-            return <BaseComponent {...this.props}/>
-        }
+const wrappedTable = (BaseComponent) => class extends React.Component {
+    componentDidMount() {
+        this.props.fetchContacts('tableData');
     }
-    return HOC
+
+    render() {
+        return <BaseComponent {...this.props}/>;
+    }
 };
 
-export default wrappedTable
+export default wrappedTable;
