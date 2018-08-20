@@ -2,14 +2,14 @@ export const getFromStorage = (key) => {
     return new Promise((accept) => {
         setTimeout(() => {
             accept(JSON.parse(window.localStorage.getItem(key)));
-        }, 100);
-    })
+        }, 2000);
+    });
 };
 
 export const setInStorage = (data, key) => {
     return new Promise((accept) => {
         setTimeout(() => {
-            accept(window.localStorage.setItem(key, JSON.stringify(data)))
-        }, 100)
-    })
+            accept(window.localStorage.setItem(key, JSON.stringify(data)));
+        }, 2000);
+    });
 };

@@ -4,6 +4,7 @@
     position: relative;
     margin: 20px;
 }
+
 .search__input {
     width: 170px;
     height: 100%;
@@ -17,9 +18,11 @@
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
+
 .search input::placeholder {
     font-size: 12px;
 }
+
 .clickable {
     height: 28px;
     width: 30px;

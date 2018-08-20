@@ -4,16 +4,17 @@ import renderer from 'react-test-renderer';
 
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-Enzyme.configure({ adapter: new Adapter() });
-import { shallow } from 'enzyme';
+
+Enzyme.configure({adapter: new Adapter()});
+import {shallow} from 'enzyme';
 
 const generateWrapper = (passedProps) => {
     const props = {
         ...passedProps
-    }
+    };
 
-    return shallow(<Form {...passedProps}/>)
-}
+    return shallow(<Form {...passedProps}/>);
+};
 
 // test('test', () => {
 //     const component = renderer.create(
@@ -25,12 +26,14 @@ const generateWrapper = (passedProps) => {
 
 describe('Form', () => {
     it('tests', () => {
-        const wrapper = generateWrapper({formData: {
-            name: '',
-                email:'',
+        const wrapper = generateWrapper({
+            formData: {
+                name: '',
+                email: '',
                 phoneNumber: ''
-            }});
-        expect(wrapper.find('.add-contact-form')).toHaveLength(1)
+            }
+        });
+        expect(wrapper.find('.add-contact-form')).toHaveLength(1);
     });
 });
 

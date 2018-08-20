@@ -1,29 +1,29 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import TableComponent from './Table';
 import {deleteContact, fetchContacts, search, setId} from '../../actions';
 import wrappedTable from '../../hoc/wrappedTable';
 
-const getVisibleContacts = (contacts,  searchString) => {
+const getVisibleContacts = (contacts, searchString) => {
     return searchString.length > 0 ?
         contacts.filter(item => searchInRow(item, searchString)) : contacts;
 };
 
 const searchInRow = (row, searchString) => {
     return Boolean((Object.values(row).splice(1, 3).filter((rowItem) => {
-        return rowItem.indexOf(searchString) >= 0
+        return rowItem.indexOf(searchString) >= 0;
     })).length);
 };
 
 const mapStateToProps = (state) => {
     return {
         tableData: getVisibleContacts(state.contacts, state.searchContacts)
-    }
+    };
 };
 const mapDispatchToProps = (dispatch) => {
     return {
         deleteItem: (id) => {
-            dispatch(deleteContact(id))
+            dispatch(deleteContact(id));
         },
         editItem: (id) => {
             dispatch(search(''));
@@ -32,13 +32,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchContacts: (url) => {
             dispatch(fetchContacts(url));
         }
-    }
+    };
 };
 
-const WrappedTable = wrappedTable(TableComponent);
-const Table = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(WrappedTable);
-
-export default Table;
+export default connect(mapStateToProps, mapDispatchToProps)(wrappedTable(TableComponent));

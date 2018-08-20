@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 
 test('test', () => {
     const component = renderer.create(
-        <TableRow rowData={{}} />
+        <TableRow rowData={{}}/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

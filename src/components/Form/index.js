@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import FormComponent from './Form';
 import {addContact, resetId, saveContact} from '../../actions';
@@ -9,10 +9,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(addContact({id: Date.now(), ...contactData}));
         },
         onSaveButtonClick: (id, contactData) => {
-            dispatch(saveContact({id,  ...contactData}));
+            dispatch(saveContact({id, ...contactData}));
             dispatch(resetId());
         }
-    }
+    };
 };
 
 const mapStateToProps = (state) => {
@@ -20,15 +20,15 @@ const mapStateToProps = (state) => {
     return {
         isEdit: state.editData,
         formData: state.editData ?
-            { name: filledData.name, email: filledData.email, phoneNumber: filledData.phoneNumber } :
-            { name: '', email: '', phoneNumber: '' }
+            {name: filledData.name, email: filledData.email, phoneNumber: filledData.phoneNumber} :
+            {name: '', email: '', phoneNumber: ''}
 
-    }
+    };
 };
 
 const getDeletingIndexById = (id, array) => {
     return array.findIndex((item) => {
-        return item.id === id
+        return item.id === id;
     });
 };
 
